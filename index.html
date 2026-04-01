@@ -30,7 +30,6 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 15px; line-height: 1.6; }
 
-/* HEADER */
 header {
   background: var(--accent);
   padding: 0 2rem;
@@ -69,17 +68,14 @@ nav button {
 nav button:hover { background: rgba(255,255,255,0.2); color: #fff; }
 nav button.active { background: rgba(255,255,255,0.25); color: #fff; }
 
-/* LAYOUT */
 main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
 .page { display: none; }
 .page.active { display: block; }
 
-/* PAGE TITLE */
 .page-header { margin-bottom: 2rem; }
 .page-header h1 { font-size: 24px; font-weight: 600; letter-spacing: -0.5px; }
 .page-header p { color: var(--text2); font-size: 14px; margin-top: 4px; }
 
-/* CARD */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -89,7 +85,6 @@ main { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
 }
 .card-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text3); margin-bottom: 1.25rem; }
 
-/* FORM */
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .form-group { display: flex; flex-direction: column; gap: 6px; }
 .form-group.full { grid-column: 1 / -1; }
@@ -120,8 +115,6 @@ input:focus, select:focus, textarea:focus {
 }
 input::placeholder, textarea::placeholder { color: var(--text3); }
 
-/* ITEMS */
-.section-divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 .item-header { display: grid; grid-template-columns: 2.5fr 0.8fr 1.2fr 36px; gap: 8px; margin-bottom: 6px; }
 .item-header span { font-size: 12px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
 .item-row { display: grid; grid-template-columns: 2.5fr 0.8fr 1.2fr 36px; gap: 8px; margin-bottom: 8px; align-items: center; }
@@ -154,7 +147,6 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 }
 .btn-add-item:hover { background: #d8eee3; }
 
-/* SUBMIT */
 .form-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 .required-note { font-size: 12px; color: var(--text3); }
 .btn-submit {
@@ -173,7 +165,6 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 .btn-submit:hover { background: var(--accent-mid); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(42,92,69,0.25); }
 .btn-submit:active { transform: translateY(0); }
 
-/* TOAST */
 #toast {
   position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(100px);
   background: var(--accent);
@@ -188,7 +179,6 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 }
 #toast.show { transform: translateX(-50%) translateY(0); }
 
-/* STATS */
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 1.5rem; }
 .stat-card {
   background: var(--surface);
@@ -202,12 +192,10 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 .stat-value.success { color: var(--success); }
 .stat-value.muted { color: var(--text3); }
 
-/* FILTERS */
 .filter-bar { display: flex; gap: 10px; margin-bottom: 1.25rem; align-items: center; flex-wrap: wrap; }
 .filter-bar input { flex: 1; min-width: 180px; }
 .filter-bar select { width: 170px; flex-shrink: 0; }
 
-/* ORDER CARDS */
 .orders-list { display: flex; flex-direction: column; gap: 10px; }
 .order-card {
   background: var(--surface);
@@ -235,11 +223,9 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 .badge-Recusado { background: var(--danger-light); color: var(--danger); }
 .badge-Concluído { background: var(--surface2); color: var(--text3); }
 .order-meta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; font-size: 13px; color: var(--text2); }
-.order-meta span::before { content: ''; }
 .urgente { color: var(--warn); font-weight: 600; }
 .muito-urgente { color: var(--danger); font-weight: 600; }
 
-/* ORDER ACTIONS */
 .order-footer {
   border-top: 1px solid var(--border);
   padding: 10px 1.25rem;
@@ -268,7 +254,6 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 .btn-ver { margin-left: auto; font-size: 12px; color: var(--text3); background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
 .btn-ver:hover { color: var(--text2); }
 
-/* DETAIL */
 .order-detail {
   display: none;
   background: var(--surface2);
@@ -283,12 +268,10 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 .detail-obs { margin-top: 10px; font-size: 13px; color: var(--text2); background: var(--surface); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border); }
 .detail-obs strong { color: var(--text3); font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
 
-/* EMPTY */
 .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text3); }
 .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
 .empty-state p { font-size: 14px; }
 
-/* EXPORT */
 .export-btn {
   margin-left: auto;
   padding: 8px 16px;
@@ -338,7 +321,6 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
 
 <main>
 
-  <!-- FORMULÁRIO -->
   <div id="page-form" class="page active">
     <div class="page-header">
       <h1>Nova solicitação</h1>
@@ -416,7 +398,6 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
     </div>
   </div>
 
-  <!-- PAINEL -->
   <div id="page-painel" class="page">
     <div class="page-header" style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;">
       <div>
@@ -518,11 +499,15 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3200);
 }
 
+// URL DO GOOGLE APP SCRIPT - COLE A SUA AQUI!
+const URL_SHEETS = "https://script.google.com/macros/s/AKfycbykanGEr5lg6fPDhtEXOM34ez-pZ4In3QhhfSBN2y66Fmx_FsAwl_7d7zaJLLGg3uSJ/exec";
+
 function submitForm() {
   const empresa = document.getElementById('f-empresa').value.trim();
   const resp = document.getElementById('f-responsavel').value.trim();
   const tipo = document.getElementById('f-tipo').value;
   const items = getItems();
+  
   if (!empresa) { alert('Informe a empresa ou setor solicitante.'); document.getElementById('f-empresa').focus(); return; }
   if (!resp) { alert('Informe o responsável pela solicitação.'); document.getElementById('f-responsavel').focus(); return; }
   if (!tipo) { alert('Selecione o tipo de solicitação.'); document.getElementById('f-tipo').focus(); return; }
@@ -531,16 +516,28 @@ function submitForm() {
   const now = new Date();
   const order = {
     id: 'OC-' + String(orders.length + 1).padStart(4, '0'),
-    empresa, responsavel: resp, tipo,
+    empresa, 
+    responsavel: resp, 
+    tipo,
     urgencia: document.getElementById('f-urgencia').value,
     fornecedor: document.getElementById('f-fornecedor').value.trim(),
     prazo: document.getElementById('f-prazo').value,
     obs: document.getElementById('f-obs').value.trim(),
-    items, status: 'Pendente',
+    items, 
+    status: 'Pendente',
     data: now.toLocaleDateString('pt-BR'),
     hora: now.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'}),
     ts: now.getTime()
   };
+  
+  // Enviar para o Google Sheets
+  fetch(URL_SHEETS, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(order)
+  }).catch(erro => console.log('Erro ao enviar para planilha:', erro));
+  
   orders.unshift(order);
   save();
   showToast('✔ Solicitação ' + order.id + ' enviada!');
@@ -551,6 +548,8 @@ function submitForm() {
   document.getElementById('f-urgencia').value = 'Normal';
   document.getElementById('f-prazo').value = '';
   document.getElementById('items-list').innerHTML = '<div class="item-row"><input type="text" placeholder="Ex: Teste de avaliação psicológica" class="item-desc"><input type="number" placeholder="1" min="1" class="item-qtd"><input type="text" placeholder="R$ 0,00" class="item-valor"><button class="btn-remove" onclick="removeItem(this)" style="visibility:hidden">×</button></div>';
+  
+  renderPainel();
 }
 
 function setStatus(id, status) {
