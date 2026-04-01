@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ordens de Compra — Famaqui</title>
+<title>Ordem de Compra e Serviços — Famaqui</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -309,12 +309,12 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
   <div class="logo">
     <div class="logo-box">📋</div>
     <div>
-      <div class="logo-text">Ordens de Compra</div>
-      <div class="logo-sub">Famaqui Terapias</div>
+      <div class="logo-text">Ordem de Compra e Serviços</div>
+      <div class="logo-sub">Famaqui</div>
     </div>
   </div>
   <nav>
-    <button class="active" onclick="showPage('form')">&#43; Nova Solicitação</button>
+    <button class="active" onclick="showPage('form')">➕ Nova Solicitação</button>
     <button onclick="showPage('painel')">📊 Painel</button>
   </nav>
 </header>
@@ -332,7 +332,7 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
       <div class="form-grid">
         <div class="form-group">
           <label>Empresa / Setor solicitante *</label>
-          <input type="text" id="f-empresa" placeholder="Ex: Famaqui Terapias">
+          <input type="text" id="f-empresa" placeholder="Ex: Famaqui">
         </div>
         <div class="form-group">
           <label>Responsável pela solicitação *</label>
@@ -427,7 +427,7 @@ input::placeholder, textarea::placeholder { color: var(--text3); }
     </div>
 
     <div class="filter-bar">
-      <input type="text" id="filtro-texto" placeholder="🔍  Buscar por empresa, responsável ou ID..." oninput="renderPainel()">
+      <input type="text" id="filtro-texto" placeholder="🔍 Buscar por empresa, responsável ou ID..." oninput="renderPainel()">
       <select id="filtro-status" onchange="renderPainel()">
         <option value="">Todos os status</option>
         <option>Pendente</option>
@@ -499,8 +499,8 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3200);
 }
 
-// URL DO GOOGLE APP SCRIPT - COLE A SUA AQUI!
-const URL_SHEETS = "https://script.google.com/macros/s/AKfycbx17D6SvwJS-ey67rS0EjuZJDazEGLeWCCARpbMTJeJs1fOQh3ZVXy3TVAEiPY27VV90/exec";
+// === URL NOVA DO GOOGLE APP SCRIPT (ATUALIZADA) ===
+const URL_SHEETS = "https://script.google.com/macros/s/AKfycbwrTvGDqGkSshsYrd94FAyIv4T3KLSmxo0AI6ot6WdTULJJk3OhWGTsDvxmKHlu9I-U/exec";
 
 function submitForm() {
   const empresa = document.getElementById('f-empresa').value.trim();
@@ -530,7 +530,7 @@ function submitForm() {
     ts: now.getTime()
   };
   
-  // Enviar para o Google Sheets
+  // Envia os dados para a planilha (sem travar o usuário)
   fetch(URL_SHEETS, {
     method: 'POST',
     mode: 'no-cors',
@@ -542,7 +542,7 @@ function submitForm() {
   save();
   showToast('✔ Solicitação ' + order.id + ' enviada!');
 
-  // reset
+  // Limpa o formulário
   ['f-empresa','f-responsavel','f-fornecedor','f-obs'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('f-tipo').value = '';
   document.getElementById('f-urgencia').value = 'Normal';
